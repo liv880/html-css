@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+/* O fundo com as imagens */
+.fundo-filmes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Joga para trás de tudo */
+}
+
+/* Filtro escuro para as fotos não atrapalharem a leitura */
+.fundo-filmes::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background-color: #000;
+}
+
+/* Filtro para o texto ficar legível */
+.fundo-slideshow::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Começam invisíveis */
+    animation: fadeEffect 16s infinite; /* 16 segundos no total para as 4 fotos */
+}
+
+/* Configurando o tempo de entrada de cada uma */
+.s1 { animation-delay: 0s; }
+.s2 { animation-delay: 4s; }
+.s3 { animation-delay: 8s; }
+.s4 { animation-delay: 12s; }
+
+/* A mágica do Fade-In e Fade-Out */
+@keyframes fadeEffect {
+    0% { opacity: 0; }
+    10% { opacity: 1; }  /* Aparece */
+    25% { opacity: 1; }  /* Fica visível */
+    35% { opacity: 0; }  /* Some suavemente */
+    100% { opacity: 0; }
+}
+
+.mosaico-filmes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.mosaico-filmes img {
+    width: 25%; /* Ajustei para 4 imagens por linha para ficarem maiores */
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #000;
+    display: block; /* Garante que a imagem se comporte como um bloco */
+    background-color: #222; /* Se a imagem falhar, fica um cinza escuro no lugar */
+}
+
+/* Conteúdo da frente */
+.conteudo-site {
+    position: relative;
+    z-index: 10;
+}
+
+.header-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.header-botoes {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-entrar {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.banner-principal {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.area-texto h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.area-texto p, .area-texto h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.formulario-email {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+input {
+    padding: 15px;
+    width: 350px;
+    border-radius: 4px;
+    border: none;
+}
+
+.btn-vamos {
+    background-color: #e50914;
+    color: white;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

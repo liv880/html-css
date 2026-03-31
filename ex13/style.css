@@ -1,0 +1,37 @@
+/* 1. O fundo do site todo*/
+body {
+    background-color: #f4f4f4; /* Um cinza bem clarinho*/
+    font-family: arial,sans-serif;/* Uma letrinha mais moderna*/
+    color:#333: /*Cor do texto (quase preto)*/
+
+}
+
+/*2. Deixando os títulos vermelhos (estilo Bradesco) */
+h1,h3 {
+    color:#cc092f
+}
+
+/*3. Estilizando as caixinhas de digitar (Inputs) */
+input {
+        border: 2px solid #cc092f; /* Bordas cinzas*/
+        border-radius: 8px; /* Cantos arrendodados!*/
+        padding: 10px; /* Dá um "respiro" dentro da caixa*/
+        width: 200px; /*Deixa elas no mesmo tamanho*/
+}
+
+/*4. O Botão "Acessar"*/
+button {
+        background-color: #cc092f; /*Fundo vermelho*/
+        color:white /*Letra branca*/
+        border: none;
+        padding: 12px 20px;
+        border: radius 5px;
+        cursor: pointer; /* Faz parecer a "Mãozinha"ao passar o mouse*/
+        font-weight: bold;
+}
+
+/*5. Efeito quando o mouse passa no botão*/
+button:hover{
+        background-color:#a00725; /* Fica vermelho mais escuro*/
+
+}
